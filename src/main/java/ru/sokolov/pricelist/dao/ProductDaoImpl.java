@@ -4,7 +4,6 @@ import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import javax.persistence.Query;
 
 import ru.sokolov.pricelist.models.Product;
@@ -13,11 +12,10 @@ public class ProductDaoImpl implements ProductDao {
 	
 	private EntityManagerFactory emf;
 	
-	public ProductDaoImpl(String persisntenceUnit) {
-		
-		emf = Persistence.createEntityManagerFactory(persisntenceUnit);
+	public void setEmf(EntityManagerFactory emf) {
+		this.emf = emf;
 	}
-	
+
 	/**
 	 * @return List<{@link}Product> with all database entries
 	 */
