@@ -1,7 +1,5 @@
 package ru.sokolov.pricelist.dao;
 
-import java.util.Map;
-
 /**
  * Util class, containing parameters of request
  * @author SokolovVS
@@ -15,18 +13,12 @@ public class ReqParameters {
 	private String productMinPrice;
 	
 	private String productMaxPrice;
-
-	/**
-	 * Constructor
-	 * @param parameters of request
-	 */
-	public ReqParameters(Map<String, String[]> parameters) {
-		this.productCathegory = parameters.get("productCathegory")[0];
-		this.productName = parameters.get("productName")[0];
-		this.productMinPrice = parameters.get("productMinPrice")[0];
-		this.productMaxPrice = parameters.get("productMaxPrice")[0];
-	}
 	
+	/**
+	 * Default constructor without parameters
+	 */
+	public ReqParameters() {}
+
 	/**
 	 * @return True if all request parameters are empty
 	 */

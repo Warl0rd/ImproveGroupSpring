@@ -28,14 +28,10 @@ public class PricelistController {
 	@RequestMapping(value="/pricelist", method=RequestMethod.GET)
 	public ModelAndView getAllProducts() {
 		
-		System.out.println("Enter to get method");
-		
 		List<Product> products = productService.findAll();
 		
-		ModelAndView model = new ModelAndView("index");
+		ModelAndView model = new ModelAndView("pricelist");
 		model.addObject("products", products);
-		
-		System.out.println("Exit from get method");
 		
 		return model;
 	}
@@ -43,14 +39,10 @@ public class PricelistController {
 	@RequestMapping(value="/pricelist", method=RequestMethod.POST)
 	public ModelAndView getAppropriateProducts(@ModelAttribute("reqParameters") ReqParameters reqParameters) {
 		
-		System.out.println("Enter to post method");
-		
 		List<Product> products = productService.findAppropriate(reqParameters);
 		
-		ModelAndView model = new ModelAndView("index");
+		ModelAndView model = new ModelAndView("pricelist");
 		model.addObject("products", products);
-		
-		System.out.println("Exit from post method");
 		
 		return model;
 	}
